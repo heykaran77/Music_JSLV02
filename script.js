@@ -93,3 +93,16 @@ backward.addEventListener("click", () => {
     backward.style.opacity = 0.4;
   }
 });
+
+audio.addEventListener("ended", () => {
+  if (currentSong < arr.length - 1) {
+    currentSong++;
+    showSongs();
+    audio.play();
+    play.innerHTML = `<i class="ri-pause-mini-fill"></i>`;
+    flag = 1;
+    forward.style.opacity = 1;
+  } else {
+    forward.style.opacity = 0.4;
+  }
+});
